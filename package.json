@@ -3,12 +3,21 @@
   "version": "0.0.1",
   "description": "TowerFall Slack integration",
   "main": "main.js",
+  "bin": {
+    "tf-replay-watch" : "./bin/replay-watch.js",
+    "tf-post-stats"   : "./bin/post-stats.js"
+  },
   "dependencies": {
     "node-slack-upload": "v1.0.3",
+    "lodash.isequal" : "v3.0.4",
     "pad": "v0.1.0",
     "xml2js": "^0.4.10"
   },
   "devDependencies": {},
+  "scripts": {
+    "replay-watch" : "node ./bin/replay-watch.js",
+    "post-stats" : "node ./bin/post-stats.js"
+  },
   "author": "Zachary Chavez",
   "license": "ISC"
 }
