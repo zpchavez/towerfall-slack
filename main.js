@@ -4,6 +4,7 @@ var config = require('./config');
 
 var tfDataFile   = config.tfDataFile;
 var statSnapshot = config.statSnapshot;
+var replaysDir   = config.replaysDir;
 var parser       = new xml2js.Parser({async : false});
 
 var fileHandler = require('./lib/file-handler');
@@ -19,3 +20,11 @@ fs.exists(statSnapshot, function(exists) {
     }
 });
 
+// Watch for replay gifs
+fs.exists(replaysDir, function(exists) {
+    if (! exists) {
+        fs.mkdirSync(replaysDir);
+    }
+
+    fileHandler.watchForReplays();
+});

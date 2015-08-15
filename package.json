@@ -4,6 +4,7 @@
   "description": "TowerFall Slack integration",
   "main": "main.js",
   "dependencies": {
+    "node-slack-upload": "v1.0.3",
     "xml2js": "^0.4.10"
   },
   "devDependencies": {},
