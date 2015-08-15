@@ -1,8 +1,9 @@
-var fs      = require('fs');
-var xml2js  = require('xml2js');
+var fs     = require('fs');
+var xml2js = require('xml2js');
+var config = require('./config');
 
-var tfDataFile   = "/Users/zpchavez/Library/Application Support/TowerFall/tf_saveData_2";
-var statSnapshot = "/Users/zpchavez/Library/Application Support/TowerFall/statSnapshot";
+var tfDataFile   = config.tfDataFile;
+var statSnapshot = config.statSnapshot;
 var parser       = new xml2js.Parser({async : false});
 
 var colors = [
