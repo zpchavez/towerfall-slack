@@ -1,0 +1,12 @@
+{
+  "name": "towerfall-slack",
+  "version": "0.0.1",
+  "description": "TowerFall Slack integration",
+  "main": "main.js",
+  "dependencies": {
+    "xml2js": "^0.4.10"
+  },
+  "devDependencies": {},
+  "author": "Zachary Chavez",
+  "license": "ISC"
+}
