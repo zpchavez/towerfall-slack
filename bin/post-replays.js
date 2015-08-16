@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var config      = require('../config');
+var config      = require('../lib/config');
 var fs          = require('fs');
 var slackPoster = require('../lib/slack-poster');
 

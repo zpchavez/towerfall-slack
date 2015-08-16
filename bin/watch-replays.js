@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var fs     = require('fs');
 var xml2js = require('xml2js');
-var config = require('../config');
+var config = require('../lib/config');
 
 var tfDataFile   = config.tfDataFile;
 var statSnapshot = config.statSnapshot;

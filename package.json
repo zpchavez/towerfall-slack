@@ -2,20 +2,27 @@
   "name": "towerfall-slack",
   "version": "0.0.1",
   "description": "TowerFall Slack integration",
-  "main": "main.js",
   "bin": {
+    "tf-configure"     : "./bin/configure.js",
     "tf-watch-replays" : "./bin/watch-replays.js",
     "tf-post-stats"    : "./bin/post-stats.js",
     "tf-post-replays"  : "./bin/post-replays.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zpchavez/towerfall-slack.git"
+  },
   "dependencies": {
+    "lodash.isequal": "v3.0.4",
     "node-slack-upload": "v1.0.3",
-    "lodash.isequal" : "v3.0.4",
+    "os-homedir": "v1.0.1",
     "pad": "v0.1.0",
-    "xml2js": "^0.4.10"
+    "prompt": "v0.2.14",
+    "xml2js": "v0.4.10"
   },
   "devDependencies": {},
   "scripts": {
+    "configure"     : "node ./bin/configure.js",
     "watch-replays" : "node ./bin/watch-replays.js",
     "post-stats"    : "node ./bin/post-stats.js",
     "post-replays"  : "node ./bin/post-replays.js"

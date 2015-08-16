@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 var fs          = require('fs');
 var fileHandler = require('../lib/file-handler');
-var config      = require('../config');
+var config      = require('../lib/config');
 
 var statSnapshot = config.statSnapshot;
 
