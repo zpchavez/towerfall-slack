@@ -5,7 +5,8 @@
   "main": "main.js",
   "bin": {
     "tf-replay-watch" : "./bin/replay-watch.js",
-    "tf-post-stats"   : "./bin/post-stats.js"
+    "tf-post-stats"   : "./bin/post-stats.js",
+    "tf-post-replays" : "./bin/post-replays.js"
   },
   "dependencies": {
     "node-slack-upload": "v1.0.3",
@@ -16,7 +17,8 @@
   "devDependencies": {},
   "scripts": {
     "replay-watch" : "node ./bin/replay-watch.js",
-    "post-stats" : "node ./bin/post-stats.js"
+    "post-stats"   : "node ./bin/post-stats.js",
+    "post-replays" : "node ./bin/post-replays.js"
   },
   "author": "Zachary Chavez",
   "license": "ISC"
