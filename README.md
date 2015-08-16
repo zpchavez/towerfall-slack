@@ -17,7 +17,7 @@ This will post all your stats since the last time you ran it. You will
 need to run it once to initialize it. If you don't wish to run this manually
 after every session, you might want to set it up to run as a cron.
 
-2. tf-replay-watch
+2. tf-watch-replays
 
 This will start watching the replay directory and upload any new replays that
 appear in it.
