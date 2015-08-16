@@ -8,17 +8,5 @@ module.exports = {
     // API key for the Web API
     slackApiKey   : '',
     // The ID of the channel to post things in
-    channelId : 'CXXXXXXXX',
-    // Text or emoji that will represent each archer
-    archerIcon : {
-        green  : ':tf-green:',
-        blue   : ':tf-blue:',
-        pink   : ':tf-pink:',
-        orange : ':tf-orange:',
-        white  : ':tf-white:',
-        yellow : ':tf-yellow:',
-        cyan   : ':tf-cyan:',
-        purple : ':tf-purple:',
-        red    : ':tf-red:'
-    }
+    channelId : 'CXXXXXXXX'
 };
