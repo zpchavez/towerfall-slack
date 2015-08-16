@@ -8,7 +8,7 @@ TowerFall Slack lets you to easily post session stats and replay gifs to Slack.
 or existing value shown in parentheses.
 
 ### How to use
-TowerFall slack provides three CLI commands (in addition to `tf-configure`).
+TowerFall Slack provides three CLI commands (in addition to `tf-configure`).
 
 1. tf-post-stats
 
