@@ -15,13 +15,13 @@ var defaults = {};
 switch (process.platform) {
     case 'darwin':
         defaults.tfDataFile = (
-            osHomedir() + '/Library/Application Support/Towerfall/tf_saveData'
+            osHomedir() + '/Library/Application Support/TowerFall/tf_saveData'
         );
         defaults.statSnapshot = (
-            osHomedir() + '/Library/Application Support/Towerfall/statSnapshot'
+            osHomedir() + '/Library/Application Support/TowerFall/statSnapshot'
         );
         defaults.replaysDir = (
-            osHomedir() + '/Library/Application Support/Towerfall/TowerFall Replays'
+            osHomedir() + '/Library/Application Support/TowerFall/TowerFall Replays'
         );
         break;
     case 'win32':
