@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "lodash.isequal": "v3.0.4",
+    "lodash.sortby": "v3.1.5",
     "node-slack-upload": "v1.0.3",
     "os-homedir": "v1.0.1",
     "pad": "v0.1.0",
