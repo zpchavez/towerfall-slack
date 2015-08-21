@@ -12,9 +12,10 @@ TowerFall Slack provides the following CLI commands (in addition to `tf-configur
 
 1. tf-post-stats
 
-    This will post all your stats since the last time you ran it. You will
-    need to run it once to initialize it. If you don't wish to run this manually
-    after every session, you might want to set it up to run as a cron.
+    This will post all your stats since the last time you ran it. You will need
+    to run it one time before playing your initial session so that it can create
+    the stats file that it uses for comparison. If there has been no activity
+    since the last time it ran, it will not post anything.
 
 1. tf-watch-replays
 
@@ -25,8 +26,8 @@ TowerFall Slack provides the following CLI commands (in addition to `tf-configur
 
     This will post your existing replays. It takes two optional arguments which
     define a range of replays to upload e.g. `tf-post-replays 22 33` will upload replays
-    22 through 33 inclusive. Omit the arguments to upload all replays, and omit the
-    second argument to upload until there are no more replays to upload.
+    22 through 33 inclusive. Omit the second argument to keep uploading until there
+    are no more replays. Omit both to upload everything.
 
 1. tf-discard-stats
 
