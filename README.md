@@ -4,6 +4,8 @@ TowerFall Slack lets you to easily post session stats and replay gifs to Slack.
 
 ![tf-stats-screenie](https://cloud.githubusercontent.com/assets/717690/9399440/3190a8b2-4769-11e5-8646-052e96201721.png)
 
+Not tested on Windows or Linux, but might work.
+
 ### Installation
 1. npm install -g git+https://git@github.com/zpchavez/towerfall-slack.git
 1. run `tf-configure` and follow the prompts. Press enter to keep the default
