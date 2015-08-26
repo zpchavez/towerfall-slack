@@ -1,5 +1,5 @@
 #!/usr/bin/env node
 'use strict';
-var fileHandler = require('../lib/file-handler');
+var fileHandler = require('towerfall-stats').fileHandler;
 
 fileHandler.updateSnapshotFile();

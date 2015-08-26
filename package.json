@@ -14,13 +14,9 @@
     "url": "https://github.com/zpchavez/towerfall-slack.git"
   },
   "dependencies": {
-    "lodash.isequal": "v3.0.4",
-    "lodash.sortby": "v3.1.5",
     "node-slack-upload": "v1.0.3",
-    "os-homedir": "v1.0.1",
     "pad": "v0.1.0",
-    "prompt": "v0.2.14",
-    "xml2js": "v0.4.10"
+    "towerfall-stats": "git+https://git@github.com/zpchavez/towerfall-stats.git"
   },
   "devDependencies": {},
   "scripts": {

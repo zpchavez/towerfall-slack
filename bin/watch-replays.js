@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 'use strict';
-var fs          = require('fs');
-var config      = require('../lib/config');
-var replaysDir  = config.replaysDir;
-var fileHandler = require('../lib/file-handler');
+var fs            = require('fs');
+var config        = require('../lib/config');
+var replaysDir    = config.replaysDir;
+var replayWatcher = require('../lib/replay-watcher');
 
 // Watch for replay gifs
 fs.exists(replaysDir, function(exists) {
@@ -11,5 +11,6 @@ fs.exists(replaysDir, function(exists) {
         fs.mkdirSync(replaysDir);
     }
 
-    fileHandler.watchForReplays();
+    replayWatcher.watchForReplays();
+    console.log('Watching for replays');
 });
