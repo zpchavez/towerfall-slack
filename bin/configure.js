@@ -1,7 +1,9 @@
 #!/usr/bin/env node
+'use strict';
+
 var fs        = require('fs');
 var osHomedir = require('os-homedir');
-var prompt    = require('prompt');
+var cliPrompt = require('prompt');
 var consts    = require('../lib/consts');
 
 var config = {};
@@ -29,7 +31,7 @@ switch (process.platform) {
         defaults.statSnapshot = osHomedir() + '/My Documents/TowerFallStats.json';
         defaults.replaysDir   = osHomedir() + '/My Documents/TowerFall Replays';
         break;
-    default:
+    case 'default':
         defaults.tfDataFile     = osHomedir() + '/.local/share/TowerFall/tf_saveData';
         defaults.statSnapshot = osHomedir() + '/.local/share/TowerFall/statSnapshot';
         defaults.replaysDir   = osHomedir() + '/.local/share/TowerFall/TowerFall Replays';
@@ -41,7 +43,7 @@ var schema = [
         name        : 'tfDataFile',
         description : 'Path to tf_saveData',
         required    : true,
-        default     : config.tfDataFile || defaults.tfDataFile
+        'default'   : config.tfDataFile || defaults.tfDataFile
     },
     {
         name        : 'statSnapshot',
@@ -49,31 +51,31 @@ var schema = [
             'Path of file in which to store stat snapshots'
         ),
         required    : true,
-        default     : config.statSnapshot || defaults.statSnapshot
+        'default'   : config.statSnapshot || defaults.statSnapshot
     },
     {
         name        : 'replaysDir',
         description : 'Directory where replays are stored',
         required    : true,
-        default     : config.replaysDir || defaults.replaysDir
+        'default'   : config.replaysDir || defaults.replaysDir
     },
     {
         name        : 'slackApiKey',
         description : 'API key for the Web API',
         required    : true,
-        default     : config.slackApiKey
+        'default'   : config.slackApiKey
     },
     {
         name        : 'channelId',
         description : 'The ID of the channel to post things in',
         required    : true,
-        default     : config.channelId
+        'default'   : config.channelId
     }
 ];
 
-prompt.start();
+cliPrompt.start();
 
-prompt.get(schema, function(error, results) {
+cliPrompt.get(schema, function(error, results) {
     if (error) {
         console.log(error.message);
     } else {
@@ -81,7 +83,7 @@ prompt.get(schema, function(error, results) {
             consts.CONFIG_PATH,
             JSON.stringify(results),
             {
-                mode : 0600
+                mode : parseInt('0600', 8)
             }
         );
         console.log('Configuration Saved');

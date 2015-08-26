@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+'use strict';
 var config      = require('../lib/config');
 var fs          = require('fs');
 var slackPoster = require('../lib/slack-poster');
@@ -6,7 +7,7 @@ var slackPoster = require('../lib/slack-poster');
 var sortedReplays, replayFiles, start, end;
 
 start = parseInt(process.argv[2], 10) || 0;
-end   = parseInt(process.argv[3]) || Infinity;
+end   = parseInt(process.argv[3], 10) || Infinity;
 
 if (isNaN(start) || isNaN(end)) {
     throw new Error('start and end args must be integers');
