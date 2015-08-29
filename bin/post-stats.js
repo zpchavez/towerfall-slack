@@ -9,7 +9,7 @@ var statSnapshot = config.statSnapshot;
 
 fs.exists(statSnapshot, function(exists) {
     if (! exists) {
-        fileHandler.createSnapshotFile();
+        fileHandler.writeSnapshotFile();
         console.log('First time executing. Stats will be compiled next time.');
     } else {
         var stats = fileHandler.compileSessionStats();
