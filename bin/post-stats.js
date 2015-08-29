@@ -3,7 +3,7 @@
 var fs          = require('fs');
 var fileHandler = require('towerfall-stats').fileHandler;
 var slackPoster = require('../lib/slack-poster');
-var config      = require('../lib/config');
+var config      = require('towerfall-stats').config;
 
 var statSnapshot = config.statSnapshot;
 
@@ -17,7 +17,7 @@ fs.exists(statSnapshot, function(exists) {
         if (stats) {
             slackPoster.postStats(stats, function() {
                 console.log('Stats posted');
-                fileHandler.updateSnapshotFile();
+                fileHandler.writeSnapshotFile();
             });
         } else {
             console.log('No changes');

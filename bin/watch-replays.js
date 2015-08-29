@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 'use strict';
 var fs            = require('fs');
-var config        = require('../lib/config');
+var config        = require('towerfall-stats').config;
 var replaysDir    = config.replaysDir;
 var replayWatcher = require('../lib/replay-watcher');
 

@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 'use strict';
-var config      = require('../lib/config');
+var config      = require('towerfall-stats').config;
 var fs          = require('fs');
 var slackPoster = require('../lib/slack-poster');
 

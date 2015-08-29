@@ -2,4 +2,4 @@
 'use strict';
 var fileHandler = require('towerfall-stats').fileHandler;
 
-fileHandler.updateSnapshotFile();
+fileHandler.writeSnapshotFile();
