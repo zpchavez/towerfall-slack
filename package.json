@@ -7,6 +7,7 @@
     "tf-watch-replays": "./bin/watch-replays.js",
     "tf-watch-stats": "./bin/watch-stats.js",
     "tf-post-stats": "./bin/post-stats.js",
+    "tf-post-live-stats": "./bin/post-live-stats.js",
     "tf-discard-stats": "./bin/discard-stats.js",
     "tf-post-replays": "./bin/post-replays.js"
   },
@@ -26,6 +27,7 @@
     "watch-replays": "node ./bin/watch-replays.js",
     "watch-stats": "node ./bin/watch-stats.js",
     "post-stats": "node ./bin/post-stats.js",
+    "post-live-stats": "node ./bin/post-live-stats.js",
     "discard-stats": "node ./bin/discard-stats.js",
     "post-replays": "node ./bin/post-replays.js"
   },
