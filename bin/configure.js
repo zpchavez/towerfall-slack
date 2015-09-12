@@ -22,6 +22,25 @@ var schema = [
         description : 'The ID of the channel to post things in',
         required    : true,
         'default'   : config.channelId
+    },
+    {
+        name        : 'postAsBot',
+        type        : 'boolean',
+        description : 'Whether to post as a bot (rather than the user to which the API key belongs)',
+        required    : true,
+        'default'   : typeof config.postAsBot !== 'undefined' ? config.postAsBot : defaults.postAsBot
+    },
+    {
+        name        : 'botName',
+        description : 'Name of bot to post as. Leave blank to post as the user to which the API key belongs',
+        required    : false,
+        'default'   : config.botName || defaults.botName
+    },
+    {
+        name        : 'botEmoji',
+        description : 'Emoji to use for the bot',
+        required    : true,
+        'default'   : config.botEmoji || defaults.botEmoji
     }
 ];
 
