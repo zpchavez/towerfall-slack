@@ -5,6 +5,7 @@
   "bin": {
     "tf-configure": "./bin/configure.js",
     "tf-watch-replays": "./bin/watch-replays.js",
+    "tf-watch-stats": "./bin/watch-stats.js",
     "tf-post-stats": "./bin/post-stats.js",
     "tf-discard-stats": "./bin/discard-stats.js",
     "tf-post-replays": "./bin/post-replays.js"
@@ -17,12 +18,13 @@
     "os-homedir": "v1.0.1",
     "node-slack-upload": "v1.0.3",
     "pad": "v0.1.0",
-    "towerfall-stats": "v0.1.0"
+    "towerfall-stats": "git+https://git@github.com/zpchavez/towerfall-stats.git#watch-for-updates-and-include-match-details"
   },
   "devDependencies": {},
   "scripts": {
     "configure": "node ./bin/configure.js",
     "watch-replays": "node ./bin/watch-replays.js",
+    "watch-stats": "node ./bin/watch-stats.js",
     "post-stats": "node ./bin/post-stats.js",
     "discard-stats": "node ./bin/discard-stats.js",
     "post-replays": "node ./bin/post-replays.js"

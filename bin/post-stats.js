@@ -5,9 +5,9 @@ var fileHandler = require('towerfall-stats').fileHandler;
 var slackPoster = require('../lib/slack-poster');
 var config      = require('towerfall-stats').config;
 
-var statSnapshot = config.statSnapshot;
+var statSnapshotFile = config.statSnapshotFile;
 
-fs.exists(statSnapshot, function(exists) {
+fs.exists(statSnapshotFile, function(exists) {
     if (! exists) {
         fileHandler.writeSnapshotFile();
         console.log('First time executing. Stats will be compiled next time.');
