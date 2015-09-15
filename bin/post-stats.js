@@ -5,22 +5,18 @@ var fileHandler = require('towerfall-stats').fileHandler;
 var slackPoster = require('../lib/slack-poster');
 var config      = require('towerfall-stats').config;
 
-var statSnapshotFile = config.statSnapshotFile;
+var liveStatsFile = config.liveStatsFile;
 
-fs.exists(statSnapshotFile, function(exists) {
+fs.exists(liveStatsFile, function(exists) {
     if (! exists) {
-        fileHandler.writeSnapshotFile();
-        console.log('First time executing. Stats will be compiled next time.');
+        console.log('Live stats file not found. Run watch-stats and play a match to create it.');
     } else {
-        var stats = fileHandler.compileSessionStats();
+        var stats = fileHandler.getCompiledLiveStats();
 
-        if (stats) {
-            slackPoster.postStats(stats, function() {
-                console.log('Stats posted');
-                fileHandler.writeSnapshotFile();
-            });
-        } else {
-            console.log('No changes');
-        }
+        slackPoster.postStats(stats, function() {
+            console.log('Stats posted');
+            // Delete file so we can start a new one
+            fs.unlink(liveStatsFile);
+        });
     }
 });
