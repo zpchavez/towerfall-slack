@@ -19,12 +19,18 @@ should follow the format `:tf-color:`.
 
 ### CLI commands
 
+1. tf-watch-stats
+
+    Run this to start watching for changes to your tf_saveData file. Every time
+    you've finished a match, a file called `liveStats` in the tf_saveData directory
+    will be updated. By default it will delete any existing liveStats file, but you
+    may use the `-a` or `--append` flags to instead append to the existing file.
+
 1. tf-post-stats
 
-    This will post all your stats since the last time you ran it. You will need
-    to run it one time before playing your initial session so that it can create
-    the stats file that it uses for comparison. If there has been no activity
-    since the last time it ran, it will not post anything.
+    This will post all the stats you've accumulated since running `tf-watch-stats`.
+    It will then delete the session stats file, making way for the next session's stats.
+    If there has been no activity, it will not post anything.
 
 1. tf-watch-replays
 
@@ -38,6 +44,9 @@ should follow the format `:tf-color:`.
     22 through 33 inclusive. Omit the second argument to keep uploading until there
     are no more replays. Omit both to upload everything.
 
-1. tf-discard-stats
+### Shortcomings
 
-    Useful if you've been playing co-op.
+You may notice that the posted stats differ slightly from those that can be viewed
+in game. The main reason for this seems to be that the tf_saveData file counts
+self kills as kills. Although total self kills are tracked, they are not tracked
+per archer, so there is no way around this.
