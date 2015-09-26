@@ -1,6 +1,6 @@
 {
   "name": "towerfall-slack",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Post TowerFall stats and replays into Slack",
   "bin": {
     "tf-configure": "./bin/configure.js",
