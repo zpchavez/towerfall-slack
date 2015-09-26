@@ -2,7 +2,7 @@
 
 Easily post TowerFall session stats and replay gifs to Slack.
 
-![tf-stats-screenie](https://cloud.githubusercontent.com/assets/717690/9399440/3190a8b2-4769-11e5-8646-052e96201721.png)
+![tf-stats-screenie](https://cloud.githubusercontent.com/assets/717690/10119244/cc8bc8cc-6444-11e5-9e02-db4de3986502.png)
 
 Not tested on Windows or Linux, but might work.
 
