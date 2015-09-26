@@ -48,5 +48,5 @@ should follow the format `:tf-color:`.
 
 You may notice that the posted stats differ slightly from those that can be viewed
 in game. The main reason for this seems to be that the tf_saveData file counts
-self kills as kills. Although total self kills are tracked, they are not tracked
-per archer, so there is no way around this.
+a self kill as both a death *and* a kill. Although total self kills are tracked,
+they are not tracked per archer, so there is no way around this.
