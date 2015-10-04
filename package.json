@@ -4,8 +4,9 @@
   "description": "Post TowerFall stats and replays into Slack",
   "bin": {
     "tf-configure": "./bin/configure.js",
+    "tf-db-configure": "./node_modules/towerfall-stats/bin/db-configure.js",
     "tf-watch-replays": "./bin/watch-replays.js",
-    "tf-watch-stats": "./bin/watch-stats.js",
+    "tf-watch-stats": "./node_modules/towerfall-stats/bin/watch.js",
     "tf-post-stats": "./bin/post-stats.js",
     "tf-post-replays": "./bin/post-replays.js"
   },
@@ -18,13 +19,14 @@
     "os-homedir": "v1.0.1",
     "node-slack-upload": "v1.0.3",
     "pad": "v0.1.0",
-    "towerfall-stats": "0.2.0"
+    "towerfall-stats": "git+https://git@github.com/zpchavez/towerfall-stats.git#save-to-db"
   },
   "devDependencies": {},
   "scripts": {
     "configure": "node ./bin/configure.js",
+    "db-configure": "node ./node_modules/towerfall-stats/bin/db-configure.js",
     "watch-replays": "node ./bin/watch-replays.js",
-    "watch-stats": "node ./bin/watch-stats.js",
+    "watch-stats": "node ./node_modules/towerfall-stats/bin/watch.js",
     "post-stats": "node ./bin/post-stats.js",
     "post-replays": "node ./bin/post-replays.js"
   },
