@@ -21,10 +21,14 @@ should follow the format `:tf-color:`.
 
 1. tf-watch-stats
 
-    Run this to start watching for changes to your tf_saveData file. Every time
-    you've finished a match, a file called `liveStats` in the tf_saveData directory
-    will be updated. By default it will delete any existing liveStats file, but you
-    may use the `-a` or `--append` flags to instead append to the existing file.
+    Start watching for changes to your tf_saveData file. Accepts three options:
+
+    * `-f` or `--save-to-file` - Save match data and accumulated summary data to a file
+    * `-d` or `--save-to-db`   - Save match data to the database
+    * `-a` or `--append`       - If using the `-f` option, append to the existing file instead of overwriting it
+
+    If no options are provided, the script will save changes to a file, overwriting it if it already exists.
+    If you wish to save match data to a database, you must first run `tf-db-configure`.
 
 1. tf-post-stats
 
@@ -43,6 +47,14 @@ should follow the format `:tf-color:`.
     define a range of replays to upload e.g. `tf-post-replays 22 33` will upload replays
     22 through 33 inclusive. Omit the second argument to keep uploading until there
     are no more replays. Omit both to upload everything.
+
+1. tf-db-configure
+
+    Set database configuration. Only necessary if using the `-d` option with `tf-watch-stats`.
+
+1. tf-configure
+
+    Set required configuration options.
 
 ### Shortcomings
 
