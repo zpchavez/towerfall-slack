@@ -25,10 +25,12 @@ should follow the format `:tf-color:`.
 
 1. tf-watch-stats
 
-    Start watching for changes to your tf_saveData file. Accepts three options:
+    Start watching for changes to your tf_saveData file. If all you want to do is post stats to Slack,
+    you'll be fine running the script with no options. For more advanced usage, the following
+    options are supported:
 
-    * `-f` or `--save-to-file` - Save match data and accumulated summary data to a file
-    * `-d` or `--save-to-db`   - Save match data to the database
+    * `-f` or `--save-to-file` - Save match data and accumulated summary data to a file. This file is the source of the stats posted to Slack.
+    * `-d` or `--save-to-db`   - Save match data to a database. This is optional, and not necessary for posting to Slack.
     * `-a` or `--append`       - If using the `-f` option, append to the existing file instead of overwriting it
 
     If no options are provided, the script will save changes to a file, overwriting it if it already exists.
