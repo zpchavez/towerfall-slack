@@ -19,7 +19,7 @@
     "os-homedir": "1.0.1",
     "node-slack-upload": "1.0.3",
     "pad": "0.1.0",
-    "towerfall-stats": "git+https://git@github.com/zpchavez/towerfall-stats.git#save-to-db"
+    "towerfall-stats": "0.3.0"
   },
   "devDependencies": {},
   "scripts": {
