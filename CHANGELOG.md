@@ -1,6 +1,9 @@
 CHANGELOG
 =========
 
+## [v0.4.1](https://github.com/zpchavez/towerfall-slack/compare/v0.4.0...v0.4.1) (2015-01-22)
+* Improve reliability of file watching (by updating chokidar to version that supports awaitWriteFinish)
+
 ## [v0.4.0](https://github.com/zpchavez/towerfall-slack/compare/v0.3.0...v0.4.0) (2015-10-20)
 * Update to towerfall-stats v0.3.0
 * Use chokidar to replay watching
