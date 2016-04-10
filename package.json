@@ -16,10 +16,11 @@
   },
   "dependencies": {
     "chokidar": "1.4.2",
-    "os-homedir": "1.0.1",
+    "node-fetch": "^1.5.0",
     "node-slack-upload": "1.0.3",
+    "os-homedir": "1.0.1",
     "pad": "0.1.0",
-    "towerfall-stats": "0.3.1"
+    "towerfall-stats": "git+https://git@github.com/zpchavez/towerfall-stats.git#post-to-api"
   },
   "devDependencies": {},
   "scripts": {
