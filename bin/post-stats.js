@@ -2,14 +2,15 @@
 'use strict';
 var fileHandler = require('towerfall-stats').fileHandler;
 var slackPoster = require('../lib/slack-poster');
-var config      = require('towerfall-stats').config;
-var fetch       = require('node-fetch');
+var config = require('towerfall-stats').config;
+var fetch = require('node-fetch');
 var isJsonResponse = require('../lib/is-json-response');
+var argv = require('minimist')(process.argv.slice(2));
 
-// Post stats from the last 6 hours.
+var hoursBack = parseInt(argv.h, 10) || 6;
 
-var sixHoursAgo = new Date(Date.now() - 6 * 60 * 60 * 1000);
-var formattedDate = sixHoursAgo.toJSON();
+var since = new Date(Date.now() - hoursBack * 60 * 60 * 1000);
+var formattedDate = since.toJSON();
 // API doesn't support fractional seconds, so get rid of those
 formattedDate = formattedDate.replace(/\.\d+Z$/, 'Z');
 
