@@ -16,8 +16,9 @@
   },
   "dependencies": {
     "chokidar": "1.4.2",
-    "os-homedir": "1.0.1",
+    "minimist": "1.2.0",
     "node-slack-upload": "1.0.3",
+    "os-homedir": "1.0.1",
     "pad": "0.1.0",
     "towerfall-stats": "0.3.1"
   },
