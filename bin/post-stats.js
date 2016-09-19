@@ -11,13 +11,21 @@ var hoursBack = parseInt(argv.h, 10) || 6;
 var type = argv.t;
 var typeString = type ? `&type=${type}` : '';
 var teams = argv.teams;
+var matchups = argv.matchups;
 
 var since = new Date(Date.now() - hoursBack * 60 * 60 * 1000);
 var formattedDate = since.toJSON();
 // API doesn't support fractional seconds, so get rid of those
 formattedDate = formattedDate.replace(/\.\d+Z$/, 'Z');
 
-var path = `/group/${config.groupId}/${teams ? 'team-summary' : 'summary'}`;
+var path = `/group/${config.groupId}/`;
+if (teams) {
+    path += 'team-summary';
+} else if (matchups) {
+    path += 'matchups-summary';
+} else {
+    path += 'summary';
+}
 var queryString = `?start=${formattedDate}&rankings&table${typeString}`;
 
 fetch(
@@ -32,7 +40,20 @@ fetch(
     var content = contentAndResponse[0];
     var response = contentAndResponse[1];
     if (response.ok) {
-        if (parseInt(content.matches, 10) !== 0) {
+        if (matchups) {
+            var promises = [];
+            content.forEach(matchup => {
+                promises.push(
+                    slackPoster.postStats(
+                        matchup,
+                        `*${matchup.stats[0].team.join('/')} vs ${matchup.stats[1].team.join('/')}*`
+                    )
+                );
+            });
+            Promise.all(promises).then(() => {
+                process.exit(0);
+            });
+        } else if (parseInt(content.matches, 10) !== 0) {
             var headingText;
             switch (type) {
                 case 'ffa':
@@ -42,7 +63,7 @@ fetch(
                     headingText = '*2v2 Stats*';
                     break;
                 default:
-                    headingText = teams ? '*2v2 Stats*' : '*Overall Stats*';
+                    headingText = teams ? '*Overall Team Stats*' : '*Overall Stats*';
                     break;
             }
             return slackPoster.postStats(content, headingText)
