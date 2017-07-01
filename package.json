@@ -21,6 +21,7 @@
     "node-slack-upload": "1.0.3",
     "os-homedir": "1.0.1",
     "pad": "0.1.0",
+    "towerfall-gif-fixer": "git+https://git@github.com/zpchavez/towerfall-gif-fixer.git#bdc98eda6d54fbd44e1309818eb30c6896720f48",
     "towerfall-stats": "git+https://git@github.com/zpchavez/towerfall-stats.git#post-to-api"
   },
   "devDependencies": {},
