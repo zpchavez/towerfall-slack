@@ -36,23 +36,19 @@ fetch(
     } else {
         return response.json().then(json => [json, response]);
     }
-}).then(contentAndResponse => {
+}).then(async contentAndResponse => {
     var content = contentAndResponse[0];
     var response = contentAndResponse[1];
     if (response.ok) {
         if (matchups) {
-            var promises = [];
-            content.forEach(matchup => {
-                promises.push(
-                    slackPoster.postStats(
-                        matchup,
-                        `*${matchup.stats[0].team.join('/')} vs ${matchup.stats[1].team.join('/')}*`
-                    )
+            for (let i = 0; i < content.length; i += 1) {
+                const matchup = content[i];
+                await slackPoster.postStats(
+                    matchup,
+                    `*${matchup.stats[0].team.join('/')} vs ${matchup.stats[1].team.join('/')}*`
                 );
-            });
-            Promise.all(promises).then(() => {
-                process.exit(0);
-            });
+            }
+            process.exit(0);
         } else if (parseInt(content.matches, 10) !== 0) {
             var headingText;
             switch (type) {
