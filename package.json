@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "chokidar": "1.4.2",
-    "minimist": "1.2.0",
+    "minimist": "1.2.5",
     "node-slack-upload": "1.0.3",
     "os-homedir": "1.0.1",
     "pad": "0.1.0",
