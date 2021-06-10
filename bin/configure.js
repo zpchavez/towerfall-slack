@@ -13,9 +13,15 @@ var schema = [
     },
     {
         name        : 'slackApiKey',
-        description : 'API key for the Web API',
+        description : 'API key for the Slack Web API with chat:write and files:write scopes',
         required    : true,
         'default'   : config.slackApiKey
+    },
+    {
+        name        : 'signingSecret',
+        description : 'The signing secret for the slack app',
+        required    : true,
+        'default'   : config.signingSecret
     },
     {
         name        : 'channelId',
