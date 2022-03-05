@@ -15,7 +15,7 @@
     "url": "https://github.com/zpchavez/towerfall-slack.git"
   },
   "dependencies": {
-    "@slack/bolt": "^3.4.0",
+    "@slack/bolt": "^3.10.0",
     "chokidar": "1.4.2",
     "minimist": "1.2.0",
     "node-fetch": "^1.5.0",
@@ -24,7 +24,6 @@
     "pad": "0.1.0",
     "towerfall-stats": "git+https://git@github.com/zpchavez/towerfall-stats.git#post-to-api"
   },
-  "devDependencies": {},
   "scripts": {
     "configure": "node ./bin/configure.js",
     "db-configure": "node ./node_modules/towerfall-stats/bin/db-configure.js",
